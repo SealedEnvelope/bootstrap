@@ -112,7 +112,8 @@ rm-bootstrap:
 	rm -rf bootstrap
 
 flipper: rm-bootstrap bootstrap
-	cp bootstrap/css/bootstrap.css ../flipper/app/assets/stylesheets/
-	cp bootstrap/css/bootstrap-responsive.css ../flipper/app/assets/stylesheets/
+	cp bootstrap/css/bootstrap.css ../flipper/app/assets/stylesheets/bootstrap.css.scss
+	sed -i "" 's#url("../img/#image-url("#g' ../flipper/app/assets/stylesheets/bootstrap.css.scss
+	cp bootstrap/css/bootstrap-responsive.css ../flipper/app/assets/stylesheets/bootstrap-responsive.css
 
 .PHONY: docs watch gh-pages rm-bootstrap flipper
