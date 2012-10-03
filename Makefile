@@ -104,5 +104,15 @@ watch:
 haunt:
 	@haunt .issue-guidelines.js https://github.com/twitter/bootstrap
 
+#
+# SE
+#
 
-.PHONY: docs watch gh-pages
+rm-bootstrap:
+	rm -rf bootstrap
+
+flipper: rm-bootstrap bootstrap
+	cp bootstrap/css/bootstrap.css ../flipper/app/assets/stylesheets/
+	cp bootstrap/css/bootstrap-responsive.css ../flipper/app/assets/stylesheets/
+
+.PHONY: docs watch gh-pages rm-bootstrap flipper
