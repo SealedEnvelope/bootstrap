@@ -30,6 +30,12 @@
 @purple:                #7a43b6;
 
 
+// SE colors
+// -------------------------
+@seLightBlue:           #5bb6de;
+@seDarkBlue:            #28a7de; //#2f8db5;
+
+
 // Scaffolding
 // -------------------------
 @bodyBackground:        @white;
@@ -38,7 +44,7 @@
 
 // Links
 // -------------------------
-@linkColor:             #08c;
+@linkColor:             @seDarkBlue;
 @linkColorHover:        darken(@linkColor, 15%);
 
 
@@ -70,8 +76,8 @@
 @btnBackgroundHighlight:            darken(@white, 10%);
 @btnBorder:                         #bbb;
 
-@btnPrimaryBackground:              @linkColor;
-@btnPrimaryBackgroundHighlight:     spin(@btnPrimaryBackground, 20%);
+@btnPrimaryBackground:              @seLightBlue;
+@btnPrimaryBackgroundHighlight:     darken(@btnPrimaryBackground, 15%);
 
 @btnInfoBackground:                 #5bc0de;
 @btnInfoBackgroundHighlight:        #2f96b4;
