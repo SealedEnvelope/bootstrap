@@ -8,7 +8,7 @@ h3 { font-size: 18px; }
 h4 { font-size: 16px; }
 
 h1 {
-  margin-bottom: 20px;
+  margin-bottom: @baseMarginHeight;
   a, a:hover {
     color: @black;
     text-decoration: none;
@@ -35,11 +35,24 @@ h2, h3, h4, h5, h6 {
 
 a { text-decoration: none; }
 
+dt {
+  margin-top: @baseMarginHeight / 2;
+}
+
 .highlight {
   color: @seLightBlue;
 }
 
 // Buttons
 .btn-solo {
-  margin: 20px 0;
+  margin: 5px 0;
+}
+
+// Forms in wells
+form.well {
+  margin-top: @baseMarginHeight / 2;
+  hr {
+    margin: (@baseMarginHeight / 2) 0;
+    border-top-color: darken(@wellBackground, 7%);
+  }
 }
