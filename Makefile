@@ -116,4 +116,12 @@ flipper: rm-bootstrap bootstrap
 	sed -i "" 's#url("../img/#image-url("#g' ../flipper/app/assets/stylesheets/bootstrap.css.scss
 	cp bootstrap/css/bootstrap-responsive.css ../flipper/app/assets/stylesheets/bootstrap-responsive.css
 
-.PHONY: docs watch gh-pages rm-bootstrap flipper
+newtse: rm-bootstrap bootstrap
+	cp bootstrap/css/bootstrap.css ../newtse/assets/css/bootstrap.css
+	cp bootstrap/css/bootstrap-responsive.css ../newtse/assets/css/bootstrap-responsive.css
+
+se_www: rm-bootstrap bootstrap
+	cp bootstrap/css/bootstrap.css ../se_www/assets/css/bootstrap.css
+	cp bootstrap/css/bootstrap-responsive.css ../se_www/assets/css/bootstrap-responsive.css
+
+.PHONY: docs watch gh-pages rm-bootstrap flipper newtse se_www

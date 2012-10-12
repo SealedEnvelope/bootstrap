@@ -4,10 +4,12 @@
 
 // Typography
 h1 { font-size: 34px; }
+h2 { font-size: 20px; }
 h3 { font-size: 18px; }
 h4 { font-size: 16px; }
 
 h1 {
+  line-height: 1;
   margin-bottom: @baseMarginHeight;
   a, a:hover {
     color: @black;
@@ -43,6 +45,16 @@ dt {
 
 .highlight {
   color: @seLightBlue;
+}
+
+// Headers with backgrounds
+.bg {
+  background: url("../img/sep.png");
+  margin-bottom: 20px;
+  padding: 5px;
+}
+h1.bg {
+  margin-left: -5px;
 }
 
 // Buttons
