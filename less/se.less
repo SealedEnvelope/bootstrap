@@ -70,3 +70,150 @@ form.well {
     border-top-color: darken(@wellBackground, 7%);
   }
 }
+
+// Navigation
+// Hide dropdown navs immediately
+.navbar .nav ul {
+  visibility: hidden;
+}
+
+.navbar {
+  margin: 0 0 20px;
+  border: solid @grayDarker;
+  border-width: 1px 0;
+  background-color: #111;
+  #gradient > .vertical(#444, #111);
+  box-shadow: 0 1px 0 #999, 0 1px 0 #666 inset;
+}
+.navbar .brand, .navbar .badge, .navbar .label {
+  font-size: 12px;
+  line-height: 1em;
+  vertical-align: middle;
+}
+
+@media (min-width:980px){
+    .navbar+.container #header {
+      margin-top: 7px;
+    }
+    .navbar-fixed-top+.container {
+      margin-top: 60px;
+    }
+    .navbar-inner {
+      background: 0 !important;
+      border: 0 !important;
+      min-height: 31px;
+    }
+    .navbar .nav {
+      float: right !important;
+      margin: 0 !important;
+    }
+    .navbar .nav li {
+      float: left;
+      border-right: 1px solid @grayDarker;
+      box-shadow: 1px 0 0 #444;
+      position: relative;
+    }
+    .navbar .nav li:last-child {
+      border-right: none !important;
+      box-shadow: 0 0 0 #444;
+    }
+    .navbar .nav a {
+      float: left;
+      position: relative;
+      padding: 6px 15px !important;
+      color: #a8a8a8;
+      font-size: 11px;
+      text-transform: uppercase;
+      text-decoration: none;
+      text-shadow: 1px 1px 0 #121212;
+    }
+    .navbar .nav li:hover > a, .nav .active a {
+      background: 0;
+      color: @white;
+    }
+    .navbar .nav ul {
+      font-size: 12px;
+      display: block;
+      visibility: hidden;
+      margin: 6px 0 0;
+      padding: 0;
+      position: absolute;
+      z-index: 1;
+      border: 0;
+      background: #444;
+      #gradient > .vertical(#444, #111);
+      box-shadow: 0 -1px 0 rgba(255,255,255,.3);
+      border-radius: 3px;
+      .transition(visibility 0.8s ease);
+    }
+    .navbar .nav ul:after, .nav ul:before {
+      border: 0!important;
+    }
+    .navbar .nav li:hover > ul {
+      visibility: visible;
+    }
+    .navbar .nav ul ul {
+      top: 0;
+      left: 165px;
+      box-shadow: -1px 0 0 rgba(255,255,255,.3);
+    }
+    .navbar .nav ul li {
+      float: none;
+      display: block;
+      border: 0;
+      box-shadow: 0 1px 0 #111, 0 2px 0 #666;
+    }
+    .navbar .nav ul li:last-child {
+      box-shadow: none;
+    }
+    .navbar .nav ul a {
+      padding: 8px!important;
+      font-size: 11px;
+      display: block;
+      white-space: nowrap;
+      float: none;
+      text-transform: none;
+    }
+    .navbar .nav ul a:hover {
+      background-color: @seLightBlue;
+      text-shadow: none;
+    }
+    .navbar .nav ul li:first-child > a {
+      border-radius: 3px 3px 0 0;
+    }
+    .navbar .nav ul li:first-child > a:after {
+      content: '';
+      position: absolute;
+      left: 40px;
+      top: -6px;
+      border-left: 6px solid transparent;
+      border-right: 6px solid transparent;
+      border-bottom: 6px solid #444;
+    }
+    .navbar .nav ul ul li:first-child a:after {
+      left: -6px;
+      top: 50%;
+      margin-top: -6px;
+      border-left: 0;
+      border-bottom: 6px solid transparent;
+      border-top: 6px solid transparent;
+      border-right: 6px solid #444;
+    }
+    .navbar .nav ul li:first-child a:hover:after {
+      border-bottom-color: @seLightBlue;
+    }
+    .navbar .nav ul ul li:first-child a:hover:after {
+      border-right-color: @seLightBlue;
+      border-bottom-color: transparent;
+    }
+    .navbar .nav ul li:last-child > a {
+      border-radius: 0 0 3px 3px;
+    }
+}
+
+@media (max-width:979px){
+    /* ensure dropdown navs are visible */
+    .navbar .nav ul {
+      visibility: visible;
+    }
+}
