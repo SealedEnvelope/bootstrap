@@ -71,12 +71,58 @@ form.well {
   }
 }
 
-// Navigation
-// Hide dropdown navs immediately
-.navbar .nav ul {
-  visibility: hidden;
+// Header and footer
+#header {
+  margin-bottom: 30px;
+}
+#header h6 {
+  margin: 10px 0 0;
+}
+#footer {
+  margin-top: 50px;
+  padding: 30px 0 14px;
+  color: #f9f9f9;
+  background-color: #333;
+  border: 1px solid #222;
+  #gradient > .vertical(#444, #111);
+  box-shadow: 0 0 0 #999, 0 1px 0 #666 inset;
+}
+#footer p {
+  margin-top: 5px;
+  color: #a8a8a8;
+  text-decoration: none;
+  text-shadow: 1px 1px 0 #121212;
+}
+#footer strong {
+  color: #fff;
+}
+#footer a {
+  color: #a8a8a8;
+  text-decoration: none;
+  .transition(all 0.2s ease-in-out);
+  text-shadow: 1px 1px 0 #121212;
+}
+#footer a:hover {
+  color: #fff;
+  text-decoration: underline;
+  .transition(all 0.2s ease-in-out);
+}
+#footer h6 {
+  color: #fff;
+  text-shadow: 1px 1px 0 #121212;
+}
+#footer hr {
+  border-top-color: #000;
+  border-bottom-color: #333;
+  margin: 0 0 12px;
+}
+#footer h6+hr {
+  border-top-color: #222;
+  border-bottom-color: #444;
+  margin: 6px 0 10px;
 }
 
+// Navigation
 .navbar {
   margin: 0 0 20px;
   border: solid @grayDarker;
@@ -127,14 +173,13 @@ form.well {
       text-decoration: none;
       text-shadow: 1px 1px 0 #121212;
     }
-    .navbar .nav li:hover > a, .nav .active a {
-      background: 0;
-      color: @white;
-    }
+    // .navbar .nav li:hover > a, .nav .active a {
+    //   background: 0;
+    //   color: @white;
+    // }
     .navbar .nav ul {
       font-size: 12px;
-      display: block;
-      visibility: hidden;
+      display: none;
       margin: 6px 0 0;
       padding: 0;
       position: absolute;
@@ -144,13 +189,24 @@ form.well {
       #gradient > .vertical(#444, #111);
       box-shadow: 0 -1px 0 rgba(255,255,255,.3);
       border-radius: 3px;
-      .transition(visibility 0.8s ease);
-    }
-    .navbar .nav ul:after, .nav ul:before {
-      border: 0!important;
+
+      // http://www.greywyvern.com/?post=337
+      visibility: hidden;
+      opacity: 0;
+      // less doesn't like two transitions in one statement
+      @navDropdownTransition: visibility 0s linear 0.5s, opacity 0.5s linear;
+      -webkit-transition: @navDropdownTransition;
+      -moz-transition:  @navDropdownTransition;
+      -o-transition: @navDropdownTransition;
+      transition: @navDropdownTransition;
     }
     .navbar .nav li:hover > ul {
       visibility: visible;
+      opacity: 1;
+      .transition-delay(0s);
+    }
+    .navbar .nav ul:after, .nav ul:before {
+      border: 0!important;
     }
     .navbar .nav ul ul {
       top: 0;
