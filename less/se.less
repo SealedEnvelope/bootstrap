@@ -129,6 +129,11 @@ ul.inline {
 }
 
 // Wells
+.well.hero {
+  background-color: @seBeige;
+  border: 0;
+  box-shadow: 0 1px 3px #ccc;
+}
 .well.pale {
   background-color: @white;
 }
@@ -199,6 +204,7 @@ form.well {
   h6 {
     color: #fff;
     text-shadow: 1px 1px 0 #121212;
+    margin-bottom: 5px;
   }
 
   hr {
@@ -388,12 +394,5 @@ form.well {
       ul:after, ul:before {
         border: 0!important;
       }
-    }
-}
-
-@media (max-width:979px){
-    /* ensure dropdown navs are visible */
-    .navbar .nav ul {
-      visibility: visible;
     }
 }
