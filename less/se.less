@@ -232,7 +232,7 @@ form.well {
 
 // Responsive
 @media (min-width:980px){
-    h1 { font-size:50px; }
+  h1 { font-size:50px; }
 }
 
 @media (max-width:979px){
@@ -251,146 +251,146 @@ form.well {
 }
 
 @media (min-width:980px){
-    .navbar+.container #header {
-      margin-top: 7px;
+  .navbar+.container #header {
+    margin-top: 7px;
+  }
+  .navbar-fixed-top+.container {
+    margin-top: 60px;
+  }
+  .navbar-inner {
+    background: 0 !important;
+    border: 0 !important;
+    min-height: 31px;
+  }
+  .navbar .nav {
+    float: right !important;
+    margin: 0 !important;
+
+    a {
+      float: left;
+      position: relative;
+      padding: 6px 15px !important;
+      color: #a8a8a8;
+      font-size: 11px;
+      text-transform: uppercase;
+      text-decoration: none;
+      text-shadow: 1px 1px 0 #121212;
     }
-    .navbar-fixed-top+.container {
-      margin-top: 60px;
+
+    li {
+      float: left;
+      border-right: 1px solid @grayDarker;
+      box-shadow: 1px 0 0 #444;
+      position: relative;
     }
-    .navbar-inner {
-      background: 0 !important;
-      border: 0 !important;
-      min-height: 31px;
+
+    li:last-child {
+      border-right: none !important;
+      box-shadow: 0 0 0 #444;
     }
-    .navbar .nav {
-      float: right !important;
-      margin: 0 !important;
+
+    li:hover > ul {
+      visibility: visible;
+      opacity: 1;
+      .transition-delay(0s);
+    }
+
+    ul {
+      font-size: 12px;
+      display: none;
+      margin: 6px 0 0;
+      padding: 0;
+      position: absolute;
+      z-index: 1;
+      border: 0;
+      background: #444;
+      #gradient > .vertical(#444, #111);
+      box-shadow: 0 -1px 0 rgba(255,255,255,.3);
+      border-radius: 3px;
+
+      // http://www.greywyvern.com/?post=337
+      visibility: hidden;
+      opacity: 0;
+      // less doesn't like two transitions in one statement
+      @navDropdownTransition: visibility 0s linear 0.5s, opacity 0.5s linear;
+      -webkit-transition: @navDropdownTransition;
+      -moz-transition:  @navDropdownTransition;
+      -o-transition: @navDropdownTransition;
+      transition: @navDropdownTransition;
 
       a {
-        float: left;
-        position: relative;
-        padding: 6px 15px !important;
-        color: #a8a8a8;
+        padding: 8px!important;
         font-size: 11px;
-        text-transform: uppercase;
-        text-decoration: none;
-        text-shadow: 1px 1px 0 #121212;
+        display: block;
+        white-space: nowrap;
+        float: none;
+        text-transform: none;
+      }
+
+      a:hover {
+        background-color: @seLightBlue;
+        text-shadow: none;
       }
 
       li {
-        float: left;
-        border-right: 1px solid @grayDarker;
-        box-shadow: 1px 0 0 #444;
-        position: relative;
+        float: none;
+        display: block;
+        border: 0;
+        box-shadow: 0 1px 0 #111, 0 2px 0 #666;
+      }
+
+      li:first-child {
+        a:hover:after {
+          border-bottom-color: @seLightBlue;
+        }
+
+        > a {
+          border-radius: 3px 3px 0 0;
+        }
+
+        > a:after {
+          content: '';
+          position: absolute;
+          left: 40px;
+          top: -6px;
+          border-left: 6px solid transparent;
+          border-right: 6px solid transparent;
+          border-bottom: 6px solid #444;
+        }
       }
 
       li:last-child {
-        border-right: none !important;
-        box-shadow: 0 0 0 #444;
-      }
+        box-shadow: none;
 
-      li:hover > ul {
-        visibility: visible;
-        opacity: 1;
-        .transition-delay(0s);
+        > a {
+          border-radius: 0 0 3px 3px;
+        }
       }
 
       ul {
-        font-size: 12px;
-        display: none;
-        margin: 6px 0 0;
-        padding: 0;
-        position: absolute;
-        z-index: 1;
-        border: 0;
-        background: #444;
-        #gradient > .vertical(#444, #111);
-        box-shadow: 0 -1px 0 rgba(255,255,255,.3);
-        border-radius: 3px;
+        top: 0;
+        left: 165px;
+        box-shadow: -1px 0 0 rgba(255,255,255,.3);
 
-        // http://www.greywyvern.com/?post=337
-        visibility: hidden;
-        opacity: 0;
-        // less doesn't like two transitions in one statement
-        @navDropdownTransition: visibility 0s linear 0.5s, opacity 0.5s linear;
-        -webkit-transition: @navDropdownTransition;
-        -moz-transition:  @navDropdownTransition;
-        -o-transition: @navDropdownTransition;
-        transition: @navDropdownTransition;
-
-        a {
-          padding: 8px!important;
-          font-size: 11px;
-          display: block;
-          white-space: nowrap;
-          float: none;
-          text-transform: none;
+        li:first-child a:after {
+          left: -6px;
+          top: 50%;
+          margin-top: -6px;
+          border-left: 0;
+          border-bottom: 6px solid transparent;
+          border-top: 6px solid transparent;
+          border-right: 6px solid #444;
         }
 
-        a:hover {
-          background-color: @seLightBlue;
-          text-shadow: none;
+        li:first-child a:hover:after {
+          border-right-color: @seLightBlue;
+          border-bottom-color: transparent;
         }
-
-        li {
-          float: none;
-          display: block;
-          border: 0;
-          box-shadow: 0 1px 0 #111, 0 2px 0 #666;
-        }
-
-        li:first-child {
-          a:hover:after {
-            border-bottom-color: @seLightBlue;
-          }
-
-          > a {
-            border-radius: 3px 3px 0 0;
-          }
-
-          > a:after {
-            content: '';
-            position: absolute;
-            left: 40px;
-            top: -6px;
-            border-left: 6px solid transparent;
-            border-right: 6px solid transparent;
-            border-bottom: 6px solid #444;
-          }
-        }
-
-        li:last-child {
-          box-shadow: none;
-
-          > a {
-            border-radius: 0 0 3px 3px;
-          }
-        }
-
-        ul {
-          top: 0;
-          left: 165px;
-          box-shadow: -1px 0 0 rgba(255,255,255,.3);
-
-          li:first-child a:after {
-            left: -6px;
-            top: 50%;
-            margin-top: -6px;
-            border-left: 0;
-            border-bottom: 6px solid transparent;
-            border-top: 6px solid transparent;
-            border-right: 6px solid #444;
-          }
-
-          li:first-child a:hover:after {
-            border-right-color: @seLightBlue;
-            border-bottom-color: transparent;
-          }
-        }
-      }
-
-      ul:after, ul:before {
-        border: 0!important;
       }
     }
+
+    ul:after, ul:before {
+      border: 0!important;
+    }
+  }
 }
