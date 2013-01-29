@@ -124,4 +124,9 @@ se_www: rm-bootstrap bootstrap
 	cp bootstrap/css/bootstrap.css ../se_www/assets/css/bootstrap.css
 	cp bootstrap/css/bootstrap-responsive.css ../se_www/assets/css/bootstrap-responsive.css
 
-.PHONY: docs watch gh-pages rm-bootstrap flipper newtse se_www
+yuchi: 	rm-bootstrap bootstrap
+	cp bootstrap/css/bootstrap.css ../yuchi/app/assets/stylesheets/bootstrap.css.scss
+	sed -i "" 's#url("../img/#image-url("#g' ../yuchi/app/assets/stylesheets/bootstrap.css.scss
+	cp bootstrap/css/bootstrap-responsive.css ../yuchi/app/assets/stylesheets/bootstrap-responsive.css
+
+.PHONY: docs watch gh-pages rm-bootstrap flipper newtse se_www yuchi
